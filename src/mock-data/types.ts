@@ -3,4 +3,11 @@ export interface IItem {
   name: string;
   price: number;
   qty: number;
+  description: string;
+}
+
+export interface ICategory {
+  id: string;
+  name: string;
+  children?: ICategory[];
 }

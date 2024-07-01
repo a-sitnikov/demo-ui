@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/antd" element={<AntdPage />} />
         <Route path="/joyui" element={<JoyUIPage />} />
-        <Route path="/options.php" element={<MUIPage />} />
+        <Route path="/mui" element={<MUIPage />} />
       </Routes>
     </HashRouter>
   );

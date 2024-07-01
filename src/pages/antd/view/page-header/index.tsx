@@ -6,40 +6,26 @@ import {
   SearchWrap,
 } from "./ui";
 import { MenuOutlined, UserOutlined } from "@ant-design/icons";
+import { useMemo } from "react";
+import { mockCategories } from "../../../../mock-data/categories";
+import { ICategory } from "../../../../mock-data/types";
+import { ItemType } from "antd/es/menu/interface";
+
+const mapItem = (item: ICategory): ItemType => {
+  return {
+    key: item.id,
+    label: item.name,
+    children: item.children?.map(mapItem),
+  };
+};
 
 export const PageHeader = () => {
-  const menu = {
-    items: [
-      {
-        key: "1",
-        label: "Категория 1",
-        children: [
-          {
-            key: "1.1",
-            label: "Подкатегория 1.1",
-          },
-          {
-            key: "1.2",
-            label: "Подкатегория 1.2",
-          },
-        ],
-      },
-      {
-        key: "2",
-        label: "Категория 2",
-        children: [
-          {
-            key: "2.1",
-            label: "Подкатегория 2.1",
-          },
-          {
-            key: "2.2",
-            label: "Подкатегория 2.2",
-          },
-        ],
-      },
-    ],
-  };
+  const menu = useMemo(
+    () => ({
+      items: mockCategories.map(mapItem),
+    }),
+    []
+  );
 
   return (
     <HeaderStyled>
