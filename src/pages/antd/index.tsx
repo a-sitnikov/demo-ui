@@ -1,16 +1,25 @@
-import { Layout } from "antd";
+import { ConfigProvider, Layout } from "antd";
 import { Content } from "antd/es/layout/layout";
 import { PageHeader } from "./view/page-header";
 import { ItemsTable } from "./view/table";
-import { ContentStyled } from "./ui";
+import { ContentStyled, LayoutStyled } from "./ui";
 
 export const AntdPage = () => {
   return (
-    <div>
-      <PageHeader />
-      <ContentStyled>
-        <ItemsTable />
-      </ContentStyled>
-    </div>
+    <ConfigProvider
+      theme={{
+        cssVar: true,
+        token: {
+          fontFamily: "Yandex Sans Text",
+        },
+      }}
+    >
+      <LayoutStyled>
+        <PageHeader />
+        <ContentStyled>
+          <ItemsTable />
+        </ContentStyled>
+      </LayoutStyled>
+    </ConfigProvider>
   );
 };

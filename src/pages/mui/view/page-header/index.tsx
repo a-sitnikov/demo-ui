@@ -7,18 +7,13 @@ import {
   Toolbar,
 } from "@mui/material";
 import AccountCircle from "@mui/icons-material/AccountCircle";
+import { Search } from "./search";
 
 export const PageHeader = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Autocomplete
-          freeSolo
-          options={[]}
-          renderInput={(params) => (
-            <Input {...params} placeholder="Найти товар" />
-          )}
-        />
+        <Search />
         <IconButton
           size="large"
           aria-label="account of current user"

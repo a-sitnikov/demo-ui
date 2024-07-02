@@ -35,7 +35,7 @@ export const PageHeader = () => {
             Каталог
           </Button>
         </Dropdown>
-        <AutoComplete style={{ width: "300px" }} size="large">
+        <AutoComplete style={{ width: "600px" }} size="large">
           <Input.Search
             size="large"
             placeholder="Поиск товара"
