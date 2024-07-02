@@ -1,6 +1,7 @@
-import { Input, InputBase, styled } from "@mui/material";
+import { styled } from "@mui/joy/styles";
 import { BasketIcon } from "../../../../svg/basket";
 import { OrdersIcon } from "../../../../svg/orders";
+import { Input } from "@mui/joy";
 
 export const HeaderWrap = styled("div")({
   display: "flex",
@@ -19,7 +20,7 @@ export const SearchWrap = styled("div")({
   gap: "15px",
 });
 
-export const InputStyled = styled(InputBase)({
+export const InputStyled = styled(Input)({
   width: 800,
 });
 

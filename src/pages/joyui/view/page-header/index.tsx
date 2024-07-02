@@ -7,9 +7,16 @@ import {
 } from "./ui";
 
 import { mockCategories } from "../../../../mock-data/categories";
-import { Avatar, Dropdown, Menu, MenuButton, MenuItem } from "@mui/joy";
+import {
+  Avatar,
+  Button,
+  Dropdown,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from "@mui/joy";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Search } from "./search";
 
 export const PageHeader = () => {
   return (
@@ -30,7 +37,15 @@ export const PageHeader = () => {
             ))}
           </Menu>
         </Dropdown>
-        <Search />
+        <InputStyled
+          size="lg"
+          placeholder="Найти товар"
+          endDecorator={
+            <Button variant="solid" color="primary" size="lg">
+              Найти
+            </Button>
+          }
+        />
       </SearchWrap>
       <OrdersIconStyled />
       <BasketIconStyled />
