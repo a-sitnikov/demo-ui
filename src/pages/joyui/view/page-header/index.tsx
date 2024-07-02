@@ -9,6 +9,7 @@ import {
 import { mockCategories } from "../../../../mock-data/categories";
 import {
   Avatar,
+  Badge,
   Button,
   Dropdown,
   Menu,
@@ -48,7 +49,9 @@ export const PageHeader = () => {
         />
       </SearchWrap>
       <OrdersIconStyled />
-      <BasketIconStyled />
+      <Badge badgeContent="4">
+        <BasketIconStyled />
+      </Badge>
       <Avatar size="lg" />
     </HeaderWrap>
   );

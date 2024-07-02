@@ -1,4 +1,4 @@
-import { AutoComplete, Avatar, Button, Dropdown, Input } from "antd";
+import { AutoComplete, Avatar, Badge, Button, Dropdown, Input } from "antd";
 import {
   BasketIconStyled,
   HeaderStyled,
@@ -45,7 +45,9 @@ export const PageHeader = () => {
         </AutoComplete>
       </SearchWrap>
       <OrdersIconStyled />
-      <BasketIconStyled />
+      <Badge count={4}>
+        <BasketIconStyled />
+      </Badge>
       <Avatar size="large" icon={<UserOutlined />} />
     </HeaderStyled>
   );
