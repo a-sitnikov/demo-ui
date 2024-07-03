@@ -1,4 +1,4 @@
-import { Button, InputAdornment } from "@mui/material";
+import { InputAdornment } from "@mui/material";
 import { ButtonStyled, TextFieldStyled } from "./ui";
 import SearchIcon from "@mui/icons-material/Search";
 
