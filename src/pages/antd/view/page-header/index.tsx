@@ -39,7 +39,7 @@ export const PageHeader = () => {
           <Input.Search
             size="large"
             placeholder="Поиск товара"
-            enterButton
+            enterButton="Найти"
             allowClear
           />
         </AutoComplete>
