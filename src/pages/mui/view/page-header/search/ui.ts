@@ -55,7 +55,7 @@ export const TextFieldStyled = styled(TextField)(({ theme }) => ({
   },
 }));
 
-export const ButtonStyled = styled(Button)(({ theme }) => ({
+export const ButtonStyled = styled(Button)({
   borderTopLeftRadius: 0,
   borderBottomLeftRadius: 0,
-}));
+});
