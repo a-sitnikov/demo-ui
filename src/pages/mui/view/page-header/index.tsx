@@ -9,7 +9,7 @@ import { mockCategories } from "../../../../mock-data/categories";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
 import { Search } from "./search";
-import { Avatar, Button } from "@mui/material";
+import { Avatar, Badge, Button } from "@mui/material";
 import { useState } from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -53,7 +53,9 @@ export const PageHeader = () => {
         <Search />
       </SearchWrap>
       <OrdersIconStyled />
-      <BasketIconStyled />
+      <Badge badgeContent={4} color="primary">
+        <BasketIconStyled />
+      </Badge>
       <Avatar sx={{ width: 45, height: 45 }}>
         <PersonIcon />
       </Avatar>
