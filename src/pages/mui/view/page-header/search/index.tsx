@@ -1,16 +1,21 @@
-import { SearchIconWrapper, SearchStyled, StyledInputBase } from "./ui";
+import { Button, InputAdornment } from "@mui/material";
+import { TextFieldStyled } from "./ui";
 import SearchIcon from "@mui/icons-material/Search";
 
 export const Search = () => {
   return (
-    <SearchStyled>
-      <SearchIconWrapper>
-        <SearchIcon />
-      </SearchIconWrapper>
-      <StyledInputBase
-        placeholder="Найти товар"
-        inputProps={{ "aria-label": "search" }}
-      />
-    </SearchStyled>
+    <TextFieldStyled
+      variant="outlined"
+      placeholder="Найти товар"
+      InputProps={{
+        endAdornment: (
+          <InputAdornment position="end">
+            <Button variant="contained" startIcon={<SearchIcon />}>
+              Найти
+            </Button>
+          </InputAdornment>
+        ),
+      }}
+    />
   );
 };

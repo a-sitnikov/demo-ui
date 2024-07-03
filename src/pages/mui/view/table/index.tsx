@@ -1,6 +1,15 @@
+import {
+  InputBase,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  TextField,
+} from "@mui/material";
 import { mockItems } from "../../../../mock-data/items";
-import { IItem } from "../../../../mock-data/types";
-import { Input, Table } from "@mui/joy";
 
 const columns = [
   {
@@ -18,32 +27,42 @@ const columns = [
     dataIndex: "Qty",
     key: "Qty",
     width: 150,
+    align: "center",
   },
 ];
 
 export const ItemsTable = () => {
   return (
-    <Table>
-      <thead>
-        <tr>
-          {columns.map((item) => (
-            <th key={item.key} style={{ width: item.width }}>
-              {item.title}
-            </th>
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            {columns.map((item) => (
+              <TableCell
+                key={item.key}
+                align={item.align as any}
+                width={item.width}
+              >
+                <b>{item.title}</b>
+              </TableCell>
+            ))}
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {mockItems.map((row) => (
+            <TableRow
+              key={row.name}
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+            >
+              <TableCell>{row.name}</TableCell>
+              <TableCell>{row.price}</TableCell>
+              <TableCell align="right">
+                <TextField id="qty" variant="outlined" defaultValue={row.qty} />
+              </TableCell>
+            </TableRow>
           ))}
-        </tr>
-      </thead>
-      <tbody>
-        {mockItems.map((row) => (
-          <tr key={row.id}>
-            <td>{row.name}</td>
-            <td>{row.price}</td>
-            <td>
-              <Input defaultValue={row.price} />
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </Table>
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 };

@@ -6,10 +6,3 @@ export const AppWrap = styled("div")({
   alignItems: "center",
   justifyContent: "center",
 });
-
-export const ContentStyled = styled("div")({
-  maxWidth: 980,
-  width: 980,
-  marginLeft: "auto",
-  marginRight: "auto",
-});

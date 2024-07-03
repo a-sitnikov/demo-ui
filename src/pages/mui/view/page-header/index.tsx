@@ -1,40 +1,62 @@
 import {
   BasketIconStyled,
   HeaderWrap,
-  InputStyled,
   OrdersIconStyled,
   SearchWrap,
 } from "./ui";
 
 import { mockCategories } from "../../../../mock-data/categories";
-import { Avatar, Dropdown, Menu, MenuButton, MenuItem } from "@mui/joy";
 import MenuIcon from "@mui/icons-material/Menu";
+import PersonIcon from "@mui/icons-material/Person";
 import { Search } from "./search";
+import { Avatar, Button } from "@mui/material";
+import { useState } from "react";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
 export const PageHeader = () => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <HeaderWrap>
       <SearchWrap>
-        <Dropdown>
-          <MenuButton
-            size="lg"
-            variant="solid"
-            color="primary"
-            startDecorator={<MenuIcon />}
-          >
-            Каталог
-          </MenuButton>
-          <Menu>
-            {mockCategories.map((item) => (
-              <MenuItem key={item.id}>{item.name}</MenuItem>
-            ))}
-          </Menu>
-        </Dropdown>
+        <Button
+          variant="contained"
+          startIcon={<MenuIcon />}
+          size="large"
+          onClick={handleClick}
+        >
+          Каталог
+        </Button>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          {mockCategories.map((item) => (
+            <MenuItem key={item.id} onClick={handleClose}>
+              {item.name}
+            </MenuItem>
+          ))}
+        </Menu>
         <Search />
       </SearchWrap>
       <OrdersIconStyled />
       <BasketIconStyled />
-      <Avatar size="lg" />
+      <Avatar sx={{ width: 45, height: 45 }}>
+        <PersonIcon />
+      </Avatar>
     </HeaderWrap>
   );
 };

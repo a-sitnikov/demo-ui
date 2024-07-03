@@ -1,4 +1,4 @@
-import { InputBase, alpha, styled } from "@mui/material";
+import { InputBase, TextField, alpha, styled } from "@mui/material";
 
 export const SearchStyled = styled("div")(({ theme }) => ({
   position: "relative",
@@ -40,4 +40,8 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
       },
     },
   },
+}));
+
+export const TextFieldStyled = styled(TextField)(({ theme }) => ({
+  width: 600,
 }));
