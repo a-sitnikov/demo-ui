@@ -1,5 +1,5 @@
 import { Button, InputAdornment } from "@mui/material";
-import { TextFieldStyled } from "./ui";
+import { ButtonStyled, TextFieldStyled } from "./ui";
 import SearchIcon from "@mui/icons-material/Search";
 
 export const Search = () => {
@@ -10,9 +10,13 @@ export const Search = () => {
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
-            <Button variant="contained" size="large" startIcon={<SearchIcon />}>
+            <ButtonStyled
+              variant="contained"
+              size="large"
+              startIcon={<SearchIcon />}
+            >
               Найти
-            </Button>
+            </ButtonStyled>
           </InputAdornment>
         ),
       }}

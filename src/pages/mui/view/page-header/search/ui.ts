@@ -1,5 +1,5 @@
 import { PaddingOutlined } from "@mui/icons-material";
-import { InputBase, TextField, alpha, styled } from "@mui/material";
+import { Button, InputBase, TextField, alpha, styled } from "@mui/material";
 
 export const SearchStyled = styled("div")(({ theme }) => ({
   position: "relative",
@@ -53,4 +53,9 @@ export const TextFieldStyled = styled(TextField)(({ theme }) => ({
   "& .MuiInputBase-adornedEnd": {
     paddingRight: 0,
   },
+}));
+
+export const ButtonStyled = styled(Button)(({ theme }) => ({
+  borderTopLeftRadius: 0,
+  borderBottomLeftRadius: 0,
 }));
