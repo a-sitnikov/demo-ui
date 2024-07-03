@@ -10,7 +10,7 @@ export const Search = () => {
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
-            <Button variant="contained" startIcon={<SearchIcon />}>
+            <Button variant="contained" size="large" startIcon={<SearchIcon />}>
               Найти
             </Button>
           </InputAdornment>
