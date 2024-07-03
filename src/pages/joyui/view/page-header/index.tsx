@@ -1,23 +1,13 @@
 import {
   BasketIconStyled,
   HeaderWrap,
-  InputStyled,
   OrdersIconStyled,
   SearchWrap,
 } from "./ui";
-
 import { mockCategories } from "../../../../mock-data/categories";
-import {
-  Avatar,
-  Badge,
-  Button,
-  Dropdown,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-} from "@mui/joy";
+import { Avatar, Badge, Dropdown, Menu, MenuButton, MenuItem } from "@mui/joy";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Search } from "./search";
 
 export const PageHeader = () => {
   return (
@@ -38,15 +28,7 @@ export const PageHeader = () => {
             ))}
           </Menu>
         </Dropdown>
-        <InputStyled
-          size="lg"
-          placeholder="Найти товар"
-          endDecorator={
-            <Button variant="solid" color="primary" size="lg">
-              Найти
-            </Button>
-          }
-        />
+        <Search />
       </SearchWrap>
       <OrdersIconStyled />
       <Badge badgeContent="4">
